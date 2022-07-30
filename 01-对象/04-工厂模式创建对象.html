@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // /*  */通过工厂模式可以批量创建对象
+    function creatPerson (name, age, gender) {
+
+      var obj = new Object();
+      obj.name = name
+      obj.age = age
+      obj.gender = gender
+
+      obj.sayName = function () {
+        alert(this.name)
+      }
+      return obj
+    }
+
+    var obj2 = creatPerson('猪八戒', 19, '男');
+    var obj3 = creatPerson('唐三', 26, '男');
+    var obj4 = creatPerson('二郎神', 39, '男');
+
+
+    console.log(obj2);
+    console.log(obj3);
+    console.log(obj4);
+  </script>
+</body>
+
+</html>

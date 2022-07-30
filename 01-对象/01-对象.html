@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.创建一个对象
+    var KAIXIN = new Object();
+    //2.向 KAIXIN中添加一个name  age  sex属性
+    //向对象添加属性  语法：对象.属性名= 属性值
+
+    KAIXIN.name = "Mark"
+    KAIXIN.age = 18
+    KAIXIN.sex = "男"
+
+
+    console.log(KAIXIN);
+
+
+    console.log('-------------------------------------');
+
+
+    //  读书对象的属性；
+    //对象.属性名
+    console.log(KAIXIN.name);
+    console.log(KAIXIN.age);
+    console.log(KAIXIN.sex);
+
+
+    console.log('-------------------------------------');
+
+
+    //修改 对象的属性值； 语法：对象.属性名= 新值
+    //原本  KAIXIN.name = "开心"
+    KAIXIN.name = "TOM"
+    console.log(KAIXIN.name);
+
+    //删除 对象的属性     语法: delete 对象.属性名
+    delete KAIXIN.sex
+    console.log(KAIXIN.sex);
+
+    console.log(KAIXIN);
+
+    console.log('-------------------------------------');
+
+    //对象的属性名 第二种定义
+    KAIXIN["name"] = "999"
+
+    var K = 'name'
+    console.log(KAIXIN[K]);
+
+
+    console.log('-------------------------------------');
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #outer {
+      width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: azure;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="outer">
+    <p id="info">当前 5 张图片 当前第 1 张</p>
+
+    <img src="../images/1.webp.jpg" alt="6666666" width="500px">
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+
+  </div>
+
+
+
+
+  <script>
+    // 点击按钮切换图片
+    var prev = document.getElementById('prev')
+    var next = document.getElementById('next')
+
+
+    // 获取img 标签
+    var img = document.getElementsByTagName('img')[0]
+
+    //创建一个数组 保存图片路径
+
+    var imgArr = [
+      "../images/1.webp.jpg",
+      "../images/2.webp.jpg",
+      "../images/3.webp.jpg",
+      "../images/4.webp.jpg",
+      "../images/5.webp.jpg"
+
+    ]
+    //保存一个变量来保存当前图片的索引
+
+    var index = 0;
+
+
+    // 获取id为 info 的p 元素
+
+    var info = document.getElementById('info')
+
+
+
+
+    // 为两个按钮 绑定点击 函数
+
+    prev.onclick = function () {
+      index--
+      // 切换上一张索引自减
+      if (index < 0) {
+        index = imgArr.length - 1
+      }
+      img.src = imgArr[index]
+      info.innerHTML = '一共' + imgArr.length + '张图片 当前第 ' + (index + 1) + ' 张'
+    }
+
+    next.onclick = function () {
+      // 切换下一站 索引自增  index ++
+      index++
+      if (index > imgArr.length - 1) {
+        index = 0
+      }
+      img.src = imgArr[index]
+      info.innerHTML = '一共' + imgArr.length + '张图片 当前第 ' + (index + 1) + ' 张'
+
+    }
+
+
+  </script>
+</body>
+
+</html>

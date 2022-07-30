@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+      Math
+        -Math和其他的对象不同，他不说一个构造函数，
+            它属于一个工具类 不用创建对象
+
+    
+    */
+    console.log(Math.PI);
+
+    //  ceil()  -对一个数向上取整
+    console.log(Math.ceil(1.4));
+
+    //   floor() -对一个数向下取整
+    console.log(Math.floor(1.4));
+
+    //   round() -四舍五入  
+    console.log(Math.round(1.6));
+
+    /* random() 生成 0-1直接的随机数 
+
+        生成一个 x~y之间的随机数 
+            Math.round(Math.random()*(y-x)+x)
+    */
+
+    console.log(Math.random())
+
+
+    console.log('-----------------------------------');
+
+    //生成0-10的随机数
+    for (var i = 0; i < 10; i++) {
+      console.log(Math.round(Math.random() * 100));
+    }
+
+    //max() 可以获取多个数中的最大值
+    //min() 可以获取多个数中的最小值
+    var max = Math.max(10, 30, 20, 100, 60)
+    var min = Math.min(10, 30, 20, 100, 60)
+    console.log('最大值：', max);
+    console.log('最小值：', min);
+
+    // Math.pow(x,y)  返回x 的 y 次幂
+
+    console.log(Math.pow(2, 2));
+
+
+
+  </script>
+</body>
+
+</html>

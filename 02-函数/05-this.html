@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /* 每次函数的每次调用都会向函数内部传递进 一个隐含的参数 */
+
+    // 这个隐含的参数就是this，this 指向的是一个对象，
+    // 这个对象我们称为函数执行的 上下文对象
+    // 根据函数的调用方式的不同，this 会指向不同的对象
+
+    /*    
+      以函数的形式调用，this 永远指向window 
+      以方法的形式调用，this就是调用方法的那个对象
+    
+    */
+
+    function fun () {
+
+      console.log(this.name);
+
+    }
+    fun()
+
+    //创建一个对象
+    var obj = {
+      name: "孙悟空",
+      sayName: fun
+    }
+    var obj2 = {
+      name: "猪八戒",
+      sayName: fun
+    }
+
+    obj2.sayName()
+
+
+  </script>
+</body>
+
+</html>

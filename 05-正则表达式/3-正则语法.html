@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    检查一个字符串 是否含有  .
+
+
+      \.  就表示 .
+    
+    */
+
+    var reg = /\./
+    console.log(reg.test('.'));
+
+
+    // !注意：使用RegExp 这个构造函数时，，由于它的参数是一个字符串
+    // 而\ 是字符串中转义字符 ，如果要使用 \ 则需要使用\\来代替
+    reg = new RegExp("\\.");
+
+    console.log(reg.test('.'));
+
+    console.log(reg);
+
+
+    console.log('------------------------222');
+
+
+    //  \b 检查单词 边界
+    reg = /\bchild\b/;
+
+    console.log(reg.test('I am child'));//true
+    console.log(reg.test('I am childen'));//false
+
+    //去除掉字符串中的空格
+
+    var kongge = "    1 2 3    "
+    console.log(kongge);
+    result = kongge.replace(/\s/g, '')
+    console.log(result);
+
+
+  </script>
+</body>
+
+</html>

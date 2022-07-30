@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 一般我们使用for 循环遍历数组，
+
+      还可以用  forEach 遍历数组
+    
+    */
+    var arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧"]
+
+
+    // forEach() 方法需要一个函数作为参数
+    // 由我们创建但不是我们调用的，我们称为 回调函数
+    /*     数组有几个元素，forEach 方法就会执行 几次--浏览器会将遍历到的元素
+          以实参的形式传递进来  我们可以定义形参 来读书这些内容
+    */
+
+    /* 
+    a=数组里面的元素
+    b=数组里面元素的索引值
+    c= 被遍历的整个数组
+    */
+    arr.forEach(function (value, index, array) {
+      console.log('a=', value);
+      console.log('b=', index);
+      // console.log('c=', array);
+
+    })
+
+
+    console.log([] == []);
+
+  </script>
+</body>
+
+</html>

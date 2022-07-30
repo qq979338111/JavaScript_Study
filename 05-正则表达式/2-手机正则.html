@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // 检查一个字符串是否为一个合法的手机号码
+    // 手机号码规则：15325387245 （11位）
+    //1 5 325387245 
+    /* 
+        1：以 1 开头
+        2：第二位 3-9任意 数字
+        3:3位以后任意数字  长度9位
+        
+    */
+
+    var phoneStr = '15325387245'
+
+    //^1 [3-9] [0-9]{9}$
+    var phoneReg = /^1[3-9][0-9]{9}$/
+
+    console.log(phoneReg.test(phoneStr));
+
+  </script>
+
+
+</body>
+
+</html>

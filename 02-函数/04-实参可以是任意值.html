@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04-函数实参可以是任意值</title>
+</head>
+
+<body>
+  <script>
+
+    /* 定义一个函数，判断 一个数字是否 是偶数，如果是返回true ，否则 返回false */
+
+    function Info (num) {
+      // if (num % 2 == 0) {
+      //   return true
+      // } else {
+      //   return false
+      // }
+
+      return num % 2 == 0
+    }
+    var result = Info(9)
+    console.log(result);
+
+
+
+
+    console.log('-------------------------------------');
+    // 定义一个函数，用来计算圆的面积  3.14*r*r
+
+    function Area (r) {
+      return 3.14 * r * r
+    }
+
+    console.log(Area(1));
+
+    console.log('-------------------------------------');
+
+
+    //定义一个函数 可以在控制台输出 一个人的信息
+    // 可以输入 name，age，gender
+
+    function sayhello (obj) {
+      console.log('名字：' + obj.name + '年龄：' + obj.age + '性别：' + obj.gender);
+
+    }
+    var XXX = {
+
+      name: '孙悟空',
+      age: 18,
+      gender: '男'
+
+    }
+    // 实参可以是 一个对象
+    sayhello(XXX)
+    console.log('-------------------------------------');
+
+    //实参也可以是一个函数
+
+    function fun (a) {
+      a(XXX)
+    }
+    fun(sayhello)
+
+  </script>
+</body>
+
+</html>

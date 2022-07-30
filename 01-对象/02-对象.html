@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.创建一个对象
+    var KAIXIN = new Object();
+    //2.向 KAIXIN中添加一个name  age  sex属性
+    //向对象添加属性  语法：对象.属性名= 属性值
+
+    KAIXIN.name = "Mark"
+    KAIXIN.age = 18
+    KAIXIN.sex = "男"
+
+    //  读书对象的属性；
+    //对象.属性名
+    console.log(KAIXIN.name);
+    console.log(KAIXIN.age);
+    console.log(KAIXIN.sex);
+
+    console.log('-------------------');
+
+
+
+
+    //属性值
+    //对象的属性值 可以是 任意的 数据类型
+
+    var KAIXIN2 = new Object();
+    //向对象添加属性
+    KAIXIN2.name = "猪八戒"
+    //向KAIXIN对象添加属性 
+    KAIXIN.duixiang = KAIXIN2
+
+    console.log(KAIXIN.duixiang.name);
+
+    console.log('-------------------');
+
+
+    // in 运算符
+    // 通过该运算符可以检查一个对象中是否含有 指定 的属性
+    // 如果有则返回 true  没有则返回false
+
+
+    // 语法：
+    //    "属性名" in 对象 
+
+    console.log("duixiang" in KAIXIN);
+
+    console.log("123" in KAIXIN);
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

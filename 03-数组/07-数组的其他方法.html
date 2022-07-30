@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    var arr = ['孙悟空', "猪八戒", "沙和尚"];
+
+    var arr2 = ['白骨精', '蜘蛛精', '玉兔精']
+
+
+
+
+    /* 
+        concat() 可以链接两个或者多个数组并将新数组作为结果返回
+        - 该方法不会影响原数组
+    */
+
+
+    var result = arr.concat(arr2,)
+    console.log(result);
+
+
+    /* 
+        join() 该方法可以将数据转化为一个字符串
+       - 该方法不会对原数组产生影响，二手将转换后的
+           字符串作为结果返回
+        join  () 括号可以指定字符串作为参数，这个字符串将成为
+        
+           字符串 的连接符
+
+      */
+
+    var result2 = arr.join()
+    console.log(result2);
+
+
+    /* 
+        reverse()  
+        -该方法可以反转 数组
+        -改方法会直接修改数组 
+    */
+    arr.reverse()
+    console.log(arr);
+
+
+    console.log('---------------------------');
+
+
+    arrA = ['e', 'b', 'a', 'c', 'd']
+
+
+    /* 
+      sort ()
+      -可以用来对数组中的元素进行排序
+      -安装uniCode 编码排码
+    */
+
+    arrA.sort()
+    console.log(arrA);
+
+    var num = [5, 10, 40, 110, 8]
+    // console.log(Math.max(...num));
+
+    var big = num[0]
+
+    for (var i = 0; i < num.length; i++) {
+      if (big < num[i]) {
+        big = num[i];
+      }
+    }
+    console.log(big);
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

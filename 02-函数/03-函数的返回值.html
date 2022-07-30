@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*  计算三个数的值 */
+
+    /* 
+        可以使用return 来设置函数的返回值
+
+        语法 return  值
+    
+    */
+    function sum (a, b, c) {
+      var d = (a + b + c)
+      return d
+      // return 后面的语句 都不会执行了
+      alert('aaa')
+    }
+    // 函数 return 什么 result 的值就是什么
+    var result = sum(1, 2, 3)
+    console.log('result:', result);
+
+
+  </script>
+</body>
+
+</html>
