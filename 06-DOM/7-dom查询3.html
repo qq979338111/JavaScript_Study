@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="box1">
+    <div>我是box1</div>
+  </div>
+  <div class="box1">
+    <div>我是box1</div>
+  </div>
+  <div class="box1">
+    <div>我是box1</div>
+  </div>
+  <script>
+    //     document.querySelector() 
+    //  --      需要一个选择器的字符串 作为参数，可以根据一个CSS选择器来查询一个元素的节点对象
+    //使用该方法只能 查询一个  如果满足条件有多个，他只会返回第一个
+
+
+    var div = document.querySelector('.box1 div')
+    console.log(div.innerHTML);
+
+
+    var box1 = document.querySelector('.box1')
+    console.log(box1);
+
+    // document.querySelectorAll()  --      需要一个选择器的字符串 作为参数，可以根据一个CSS选择器来查询一个元素的节点对象
+    //使用该方法能 查询全部复合条件的元素 ，他只会返回一个数组  
+    var box1All = document.querySelectorAll('.box1')
+
+    console.log(box1All);
+
+
+
+  </script>
+</body>
+
+</html>

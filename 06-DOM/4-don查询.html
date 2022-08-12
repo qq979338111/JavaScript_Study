@@ -73,6 +73,18 @@
 </html>
 
 <script>
+  /* 
+  定义一个函数 用来为指定元素绑定单击响应函数
+  参数：  
+  idStr 要绑定单击响应函数的对象的id属性值
+  fun   事件的回调函数，当单击元素时，该函数将会呗调用
+
+  */
+  function myClick (idStr, fun) {
+    var btn = document.getElementById(idStr)
+    btn.onclick = fun
+
+  }
 
 
 
@@ -154,13 +166,38 @@
   btn06.onclick = function () {
     var phone = document.getElementById('phone')
     //返回phone 的第一个子节点
+
+    //firstChild 属性返回当前元素的第一个子节点（包括空白）
     var first = phone.firstChild
+
+    var first2 = phone.firstElementChild
     console.log(first);
+    console.log(first2);
   }
+  //07获取 #bj的父节点
+  myClick("btn07", function () {
+    // alert("hello")
+    //获取 #bj的父节点
+    var bj = document.getElementById('bj')
+    var parent = bj.parentNode
+
+    console.log('bj父节点' + parent.innerHTML);
+
+  })
+
+  // 08">返回#android前一个兄弟节点 
+  myClick('btn08', function () {
+    var android = document.getElementById('android');
+    // previousSibling 获取前一个兄弟节点（包括空白文本）
+    var ps = android.previousSibling
+    // console.log(ps.innerHTML)
+    var pe = android.previousElementSibling;
+    alert(pe.innerHTML)
+  })
+
+
   /*
       
-     07">返回#bj父亲节点  
-     08">返回#android前一个兄弟节点  
      09">返回#username的value属性值  
      10">设置#username的value属性值  
      11">返回#bj的文本值  

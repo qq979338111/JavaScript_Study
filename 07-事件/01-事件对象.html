@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #areaDiv {
+      width: 400px;
+      height: 250px;
+      border: 2px solid #000000;
+    }
+
+    #showMsg {
+      width: 400px;
+      height: 50px;
+      border: 2px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="areaDiv"></div>
+  <br>
+  <br>
+  <div id="showMsg"></div>
+
+  <script>
+    var areaDiv = document.getElementById('areaDiv')
+    var showMsg = document.getElementById('showMsg')
+    /* 
+        onmousemove 
+          -该事件会在鼠标在元素中移动时被时触发
+    
+    */
+
+
+    /* 
+    
+    screenX 返回当某个事件被触发时，鼠标指针的水平坐标。 
+    screenY 返回当某个事件被触发时，鼠标指针的垂直坐标。 
+
+    */
+    areaDiv.onmousemove = function (event) {
+      var x = event.screenX
+      var y = event.screenY
+
+      showMsg.innerHTML = ('x:' + x + 'y:' + y)
+    }
+
+  </script>
+
+</body>
+
+</html>

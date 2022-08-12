@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+
+    #s1 {
+      background-color: yellow;
+    }
+
+    #box1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body style="height:1000px;width:2000px">
+  <div id="box2" style="width: 500px;height:500px;background-color: #bfa;">
+    <span id="s1">我是span</span>
+
+  </div>
+  <div id="box1"></div>
+  <script>
+    /* 
+    事件的冒泡---Bubble
+      -所谓的冒泡就是事件的向上传导，当后代元素的时间被触发时，他的祖先事件也会被触发
+      -大部分是有用的
+      -如果不希望发生事件冒泡可以通过事件对象来取消冒泡
+    */
+
+    // 为s1 绑定一个单击响应函数 
+    var s1 = document.getElementById('s1')
+    s1.onclick = function (event) {
+
+      alert('11我是span响应函数')
+      // 取消冒泡 --- cancelBubble 等于true 时，可以取消冒泡
+      event.cancelBubble = true
+    }
+    // 为box1 绑定一个单击响应函数 
+    var box1 = document.getElementById('box1')
+    box1.onclick = function () {
+      alert('我是div的响应函数')
+    }
+    document.onmousemove = function (event) {
+      //
+
+      // var left = event.clientX;
+      // var top = event.clientY;
+
+      var left = event.pageX;
+      var top = event.pageY;
+
+      // 设置div 的偏移量
+      box1.style.left = left + "px"
+      box1.style.top = top + "px"
+
+      console.log(left + '+' + top);
+    }
+
+    // 为body 绑定一个单击响应函数 
+    document.body.onclick = function () {
+      alert('我是body的响应函数')
+    }
+
+    var box2 = document.getElementById('box2')
+    box2.onmousemove = function (event) {
+      event.cancelBubble = true
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background-color: bisque;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="btn01">点击改变</button>
+  <br><br>
+  <div id="box1">
+
+  </div>
+  <script>
+    // 获取样式
+    var btn01 = document.getElementById('btn01')
+
+    var box1 = document.getElementById('box1')
+    // 点击btn01
+    btn01.onclick = function () {
+      // 如何获取样式表样式
+      // getComputedStyle(样式的元素,伪元素(null) )     这个方法来获取当前元素的样式
+      /*  
+           该方法会返回一个对象，对象封装了当前元素对应的样式
+      */
+      //  
+      var box1St = getComputedStyle(box1, null)
+
+      // alert(box1St)
+      alert(box1St.backgroundColor)
+      alert(box1St.width)
+      alert(box1St.height)
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>
