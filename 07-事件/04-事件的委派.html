@@ -10,10 +10,11 @@
 
 <body>
   <button id="btn01">添加超链接</button>
-  <ul id="u1">
-    <li><a href="javascript:;">超链接一</a></li>
-    <li><a href="javascript:;">超链接二</a></li>
-    <li><a href="javascript:;">超链接三</a></li>
+  <ul id="u1" style="background-color: #bfa;">
+    <p>66666666666666666</p>
+    <li><a href="javascript:;" class="link">超链接一</a></li>
+    <li><a href="javascript:;" class="link">超链接二</a></li>
+    <li><a href="javascript:;" class="link">超链接三</a></li>
   </ul>
 
 
@@ -26,7 +27,7 @@
     btn01.onclick = function () {
       // 创建弍li
       var li = document.createElement("li")
-      li.innerHTML = '<a href="javascript:;">新建的超链接</a>'
+      li.innerHTML = '<a href="javascript:;"class="link">新建的超链接</a>'
       // 将li添加到 ul 中
       u1.appendChild(li)
 
@@ -40,9 +41,22 @@
         }
       } */
     // 我们希望绑定一次 ，既可以应用到多个元素上，即使元素是后面添加的
-    u1.onclick = function () {
+    u1.onclick = function (event) {
       //事件的委派----事件绑定到祖先元素了。。
-      alert('11123')
+      // alert('11123')
+      // 如果触发的对象是我们期望的元素，则执行 否则不执行
+      // alert(event.target)
+      /* 
+          target
+            -event中的target表示的触发事件的对象
+      */
+
+      if (event.target.className == 'link') {
+        alert('我是a的响应函数')
+      } else {
+        alert('555')
+      }
+
     }
 
 
