@@ -23,19 +23,15 @@
   <div id="box1"></div>
 
   <script>
-    /*
-        div根据不同的方向键移动
-           -按左键，div向左移动
-           -按右键，div向右移动
-           -按上键，div向上移动。。
-  */
-    var box1 = document.getElementById('box1')
-    document.onkeydown = function (event) {
-      var speed = 10;
-      if (event.ctrlKey) {
-        speed = 80;
-      }
-      switch (event.keyCode) {
+    // 定义一个变量来表示移动的速度
+    var speed = 10;
+
+
+    // 定义一个变量表示时间
+    var dir = 0;
+    /* 开启一个定时器 来控制div的移动 */
+    setInterval(function () {
+      switch (dir) {
         case 37:
           // alert('向左');
           box1.style.left = box1.offsetLeft - speed + 'px'
@@ -53,8 +49,30 @@
           box1.style.top = box1.offsetTop + speed + 'px'
           break;
       }
-      console.log(event.keyCode);
+    }, 30)
 
+
+
+    /*
+        div根据不同的方向键移动
+           -按左键，div向左移动
+           -按右键，div向右移动
+           -按上键，div向上移动。。
+  */
+    var box1 = document.getElementById('box1')
+    document.onkeydown = function (event) {
+
+      if (event.ctrlKey) {
+        speed = 80;
+      } else {
+        speed = 10
+      }
+
+      dir = event.keyCode;
+
+    }
+    document.onkeyup = function () {
+      dir = 0
     }
 
 
