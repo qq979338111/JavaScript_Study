@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 40px;
+      background-color: red;
+      left: 0;
+
+    }
+
+    #box2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 200px;
+      background-color: yellow;
+      left: 0;
+    }
+
+    #line {
+      position: absolute;
+      left: 800px;
+      width: 0px;
+      top: 0;
+      height: 1000px;
+      background-color: red;
+      border-left: 1px solid black
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="box1"></div>
+
+  <button id="btn01">点击按钮box1向左移动 </button>
+  <button id="btn02">点击按钮box1向右移动 </button>
+  <button id="btn03">测试按钮</button>
+
+  <br> <br> <br> <br> <br> <br> <br> <br>
+
+  <div id="box2"></div>
+  <button id="btn04">点击box2向右移动</button>
+
+
+
+  <div id="line"></div>
+
+  <script src="../js/tool.js"></script>
+  <script>
+    var box1 = document.getElementById('box1')
+    var btn01 = document.getElementById('btn01')
+    var btn02 = document.getElementById('btn02')
+    var btn03 = document.getElementById('btn03')
+
+    // 定义一个变量来保存定时器标识
+    // var timer;
+
+    btn01.onclick = function () {
+      move(box1, 'left', 800, 10)
+      console.log(111);
+    }
+
+    btn02.onclick = function () {
+      move(box1, 'width', 1000, 10)
+    }
+
+    // 测试按钮
+    btn03.onclick = function () {
+      move(box1, 'width', 800, 10, function () {
+        move(box1, 'height', 800, 10, function () {
+          move(box1, 'top', 0, 10, function () { })
+        })
+      })
+    }
+
+    // box2
+    var btn04 = document.getElementById('btn04')
+    btn04.onclick = function () {
+      move['over']
+    }
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

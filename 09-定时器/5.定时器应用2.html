@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+
+    #box2 {
+      position: absolute;
+      left: 800px;
+      width: 0px;
+      top: 0;
+      height: 1000px;
+      background-color: red;
+      border-left: 1px solid black
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1"></div>
+  <br><br><br><br><br><br>
+
+  <button id="btn02">点击按钮box1向左移动 </button>
+  <button id="btn01">点击按钮box1向右移动 </button>
+  <button id="btn03">暂停</button>
+
+  <div id="box2"></div>
+
+
+  <script>
+    var box1 = document.getElementById('box1')
+    var btn01 = document.getElementById('btn01')
+    var btn02 = document.getElementById('btn02')
+    var btn03 = document.getElementById('btn03')
+
+
+    // 定义一个变量来保存定时器标识
+    var timer;
+
+    btn01.onclick = function () {
+      move(box1, 800, 10)
+    }
+    function getStyle (obj, name) {
+      return getComputedStyle(obj, null)[name]
+    }
+
+    btn02.onclick = function () {
+      move(box1, 0, 10)
+    }
+
+    btn03.onclick = function () {
+      clearInterval(timer)
+    }
+
+    /* 
+        尝试创建一个可以执行移动的函数  
+            // 参数：
+                  -obj:要执行动画的对象
+                  -target:执行动画的目标位置
+                  -speed:移动的速度（正数向右，负数向左）
+    */
+    function move (obj, target, speed) {
+      clearInterval(timer)
+      // box1.style.left = '200px'
+
+      // 获取当前元素的位置
+      var current = parseInt(getStyle(obj, 'left'))
+      if (current > target) {
+        speed = -speed
+      }
+
+      timer = setInterval(function () {
+
+        // 获取原来box1的left 值
+        var oldValue = parseInt(getStyle(obj, 'left'))
+        // 在旧值的基础上 加/减
+        var newValue = oldValue + speed
+        if (speed > 0 && newValue > target) {
+          newValue = target
+        } else if (speed < 0 && newValue < target) {
+          newValue = target
+        }
+        // 将新值设置给box1
+        box1.style.left = newValue + 'px'
+
+        if (newValue == target) {
+          clearInterval(timer)
+        }
+
+
+      }, 30)
+    }
+
+
+  </script>
+</body>
+
+</html>
